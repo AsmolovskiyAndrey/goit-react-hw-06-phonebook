@@ -52,7 +52,7 @@ export const App = () => {
       <h1>Phonebook</h1>
       <ContactForm onSubmit={addContact} />
 
-      <h2>Contacts</h2>
+      <h2>My Contacts</h2>
       <Filter value={filter} onFilter={handleInputChange} />
       <ContactList
         contacts={getVisibleContacts()}
