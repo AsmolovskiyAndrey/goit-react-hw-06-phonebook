@@ -14,7 +14,6 @@ export const contactSlice = createSlice({
       state.contacts.push(action.payload);
     },
     deleteMyContact: (state, action) => {
-      console.log(action.payload);
       state.contacts = state.contacts.filter(
         contact => contact.id !== action.payload
       );
