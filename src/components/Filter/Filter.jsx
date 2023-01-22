@@ -1,9 +1,9 @@
 import { Title } from './Filter.styled';
 import { useSelector, useDispatch } from 'react-redux';
-import { addFilter } from 'components/redux/contactSlice';
+import { addFilter, getFilter } from 'components/redux/contactSlice';
 
 export const Filter = () => {
-  const filter = useSelector(state => state.phoneBook.filter);
+  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
   const handleInputChanged = evt => {

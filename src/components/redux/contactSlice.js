@@ -10,12 +10,6 @@ export const contactSlice = createSlice({
     addFilter: (state, action) => {
       state.filter = action.payload;
     },
-    // decrement: state => {
-    //   state.value -= 1;
-    // },
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload;
-    // },
     addMyContact: (state, action) => {
       state.contacts.push(action.payload);
     },
@@ -31,4 +25,8 @@ export const contactSlice = createSlice({
 export const { addMyContact, deleteMyContact, addFilter } =
   contactSlice.actions;
 
-export default contactSlice.reducer;
+export const contactsReducer = contactSlice.reducer;
+
+//! ==========SELECTORS ==============
+export const getContacts = state => state.phoneBook.contacts;
+export const getFilter = state => state.phoneBook.filter;

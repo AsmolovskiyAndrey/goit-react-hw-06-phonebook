@@ -5,18 +5,11 @@ import { Filter } from './Filter/Filter';
 import { nanoid } from 'nanoid';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { addMyContact } from './redux/contactSlice';
+import { addMyContact, getContacts } from './redux/contactSlice';
 
 export const App = () => {
-  // const [contacts, setContacts] = useState(() => {
-  //   return JSON.parse(localStorage.getItem('contacts')) ?? [];
-  // });
-  const myContacts = useSelector(state => state.phoneBook.contacts);
+  const myContacts = useSelector(getContacts);
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
 
   const addContact = data => {
     const { name, number } = data;
